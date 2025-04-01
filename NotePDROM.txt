@@ -1,0 +1,55 @@
+Packed add
+composer require spatie/laravel-permission
+
+Controller
+php artisan make:controller FoodController
+php artisan make:controller UserController
+php artisan make:controller CartController
+php artisan make:controller UserCartController
+php artisan make:controller AdminCartController
+php artisan make:controller AdminController
+php artisan make:controller ManagerController
+php artisan make:controller StaffController
+php artisan make:controller Auth/LoginController
+php artisan make:controller Auth/RegisterController
+php artisan make:controller CheckoutController
+
+middleware
+php artisan make:middleware AdminMiddleware
+php artisan make:middleware RoleMiddleware
+php artisan make:middleware CheckPermission
+
+migration
+php artisan make:migration create_foods_table
+php artisan make:migration create_categories_table
+
+seed
+php artisan make:seeder UsersTableSeeder
+php artisan make:seeder RolePermissionSeeder
+php artisan make:seeder FoodsTableSeeder
+php artisan make:seeder CategoriesTableSeeder
+php artisan make:seeder OrdersTableSeeder
+php artisan make:seeder OrderItemsTableSeeder
+php artisan make:seeder CartItemsTableSeeder
+
+view
+mkdir resources/views/foods
+mkdir resources/views/categories
+mkdir resources/views/orders
+mkdir resources/views/layouts
+
+model
+php artisan make:model Food
+php artisan make:model Category
+php artisan make:model Order
+php artisan make:model OrderItem
+php artisan make:model CartItem
+
+Bế tắc quá thì dùng cái này cho đỡ lag
+php artisan cache:clear
+php artisan config:clear
+php artisan route:clear
+php artisan view:clear
+php artisan event:clear
+
+factory
